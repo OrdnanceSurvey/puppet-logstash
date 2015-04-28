@@ -1,0 +1,9 @@
+input {
+ file {
+    type => "filesyslog"
+    path => ["/var/log/*"]
+    exclude => ["*.gz", "*.log.?", "shipper.log"]
+    sincedb_path => "/var/cache/logstash/.sincedb"
+    debug => true
+ }
+}
